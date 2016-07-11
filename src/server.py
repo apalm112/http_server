@@ -17,7 +17,7 @@ def server():
     try:
         while True:
             conn, addr = server_sock.accept()
-            buffer_length = 79
+            buffer_length = 80
             message_complete = False
             return_message = ''
             while not message_complete:
