@@ -14,12 +14,14 @@ def client(msg):
     buffer_length = 79
     msg_complete = False
     while not msg_complete:
-        part = conn.recv(buffer_length)
+        part = client_msg.recv(buffer_length)
         print(part.decode('utf8'))
         if len(part) < buffer_length:
-            break
+            msg_complete = True
+            print(msg_complete)
+        client_msg.close()
 
 
 if __name__ == '__main__':
-    client()
-    sys.exit(0)
+    msg = sys.arg[1]
+    client(msg)
