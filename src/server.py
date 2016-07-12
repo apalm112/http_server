@@ -16,21 +16,21 @@ def server():
     print('Socket is now listening....spooky')
     try:
         while True:
+            # next is blocking
             conn, addr = server_sock.accept()
             buffer_length = 80
             message_complete = False
             return_message = ''
             while not message_complete:
                 part = conn.recv(buffer_length)
-                print(part.decode('utf-8'))
+                print(part.decode('utf8'))
                 if len(part) < buffer_length:
                     message_complete = True
-                return_message += part.decode('utf-8')
-            print(return_message)
-            conn.sendall(return_message.encode('utf-8'))
+                return_message += part.decode('utf8')
+            conn.sendall(return_message.encode('utf8'))
             conn.close()
     except KeyboardInterrupt:
-        raise
+        server_sock.close()
 
 
 if __name__ == '__main__':

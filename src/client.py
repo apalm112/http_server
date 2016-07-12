@@ -6,7 +6,8 @@ import sys
 
 def client(msg):
     """Open client server to send a message."""
-    infos = socket.getaddrinfo('127.0.0.1', 5000)
+    #  address changed to 10000 for server2.py
+    infos = socket.getaddrinfo('127.0.0.1', 10000)
     stream_info = [idx for idx in infos if idx[1] == socket.SOCK_STREAM][0]
     client_msg = socket.socket(*stream_info[:3])
     client_msg.connect(stream_info[-1])
