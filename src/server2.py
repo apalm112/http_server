@@ -1,4 +1,9 @@
-"""Updated server.py script from WK 2 Day 9 Lecture notes, the changes here make the server function a Non-blocking one."""
+"""Updated server.py script.
+
+From WK 2 Day 9 Lecture notes.
+The changes here make the server function a Non-blocking one.
+"""
+
 
 import socket
 import select

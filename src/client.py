@@ -12,7 +12,7 @@ def client(msg):
     client_msg = socket.socket(*stream_info[:3])
     client_msg.connect(stream_info[-1])
     client_msg.sendall(msg.encode('utf8'))
-    buffer_length = 80
+    buffer_length = 79
     msg_complete = False
     msg = u''
     while not msg_complete:
